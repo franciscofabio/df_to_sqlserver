@@ -1,0 +1,9 @@
+README.md
+setup.py
+df_to_sqlserver/__init__.py
+df_to_sqlserver/df_to_sqlserver.py
+df_to_sqlserver.egg-info/PKG-INFO
+df_to_sqlserver.egg-info/SOURCES.txt
+df_to_sqlserver.egg-info/dependency_links.txt
+df_to_sqlserver.egg-info/requires.txt
+df_to_sqlserver.egg-info/top_level.txt
