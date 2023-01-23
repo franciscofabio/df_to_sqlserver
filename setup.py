@@ -6,7 +6,7 @@ with open("README.md", "r") as f:
 
 setup(
     name='df_to_sqlserver',
-    version='1.0.7',
+    version='1.0.8',
     license='MIT License',
     author='Francisco Fabio de Almeida Ferreira',
     long_description=page_description,

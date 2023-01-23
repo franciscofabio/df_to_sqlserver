@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: df-to-sqlserver
-Version: 1.0.7
+Version: 1.0.8
 Summary: Test version - Dataframe to Script SQL. This project created to Francisco Fabio de A. Ferreira, Systems Analyst, Data Scientist. This package. E-mail:franciscofabio18@hotmail.com.
 Home-page: https://github.com/franciscofabio/df_to_sqlserver
 Author: Francisco Fabio de Almeida Ferreira
@@ -26,7 +26,7 @@ Description: # Project: Package to Convert Dataframes to SQL Server Script
         
         ---------------------------------------------
         
-        ### Here the goal is not to provide a simple little thing but that solved a real problem for me and I believe it can solve problems with other dataframes. If you need to, you can collect the data in csv, treat them and after that, to insert the records in a sql server database, just use the df_to_sqlserver package to generate the scripts and then run these scripts in your DBMS.
+        ### Here the goal is to provide a simple code package but it solved a real problem for me and I believe it can solve problems with other dataframes. If you need, you can collect the data in csv, treat them and after that, to insert the records in a sql server database, just use the df_to_sqlserver package to generate the scripts and then run these scripts in your DBMS or batch.
         ----------------------------------------------------
         ## How to install the package
         ```bash
@@ -42,7 +42,7 @@ Description: # Project: Package to Convert Dataframes to SQL Server Script
         
         
         ## Author:
-        Francisco Fabio de Almeida Ferreira
+        Francisco Fabio de Almeida Ferreira <br>
         Systems Analyst and Data Science Specialist
         
         
