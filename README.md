@@ -5,7 +5,7 @@
 #### Date: 22/01/2023
 -----------------------------------------
 ### Description
-The "df_to_sql" package is used for:
+The "df_to_sqlserver" package is used for:
 
 - "Convert" module:
   - has the function converter_df_in_sql that with os.mkdir('SCRIPTS')
