@@ -67,17 +67,22 @@ The "df_to_sqlite" package is used for:
 ----------------------------------------------------
 ## How to install the package
 ```bash
-pip install df_to_sqlserver
+pip install df_to_sqlserver --upgrade
+```
+-------------------------------------------------
+## check package version
+```bash
+pip show df_to_sqlserver
 ```
 -------------------------------------------------
 ## How to use in any project
 
 ```python
-from df_to_sqlserver.df_to_sqlserver import *
-from df_to_sqlserver.df_to_mysql import *
-from df_to_sqlserver.df_to_postgresql import *
-from df_to_sqlserver.df_to_oracle import *
-from df_to_sqlserver.df_to_sqlite import *
+from df_to_sqlserver.df_to_sqlserver import converter_df_in_sql
+from df_to_sqlserver.df_to_mysql import converter_df_in_mysql
+from df_to_sqlserver.df_to_postgresql import converter_df_in_postgresql
+from df_to_sqlserver.df_to_oracle import converter_df_in_oracle
+from df_to_sqlserver.df_to_sqlite import converter_df_in_sqlite
 
 converter_df_in_sql(df="",tb_name="",name_script="")
 converter_df_in_mysql(df="",db_name="",tb_name="",name_script="")
