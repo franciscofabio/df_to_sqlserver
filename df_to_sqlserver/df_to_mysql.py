@@ -1,16 +1,10 @@
 # Author: Francisco Fabio
-# Função para converter o dataframe em script sql
-# df -> nome do dataframe, tb_name -> nome da tabela do banco sql
-# name_script -> nome do arquivo
-import pandas as pd
-import numpy as np
-
-
-# Função para converter o dataframe em script sql
-# df -> nome do dataframe, tb_name -> nome da tabela do banco sql
+# Função para converter o dataframe em script mysql
+# df -> nome do dataframe, db_name -> nome do banco de dados mysql
+# tb_name -> nome da tabela do banco mysql
 # name_script -> nome do arquivo
 
-def converter_df_in_sql(df, tb_name, name_script):
+def converter_df_in_mysql(df, db_name, tb_name, name_script):
     import os
     try:
         os.mkdir('SCRIPTS')
@@ -18,7 +12,7 @@ def converter_df_in_sql(df, tb_name, name_script):
         pass
     
     # Completando o nome do Script
-    name_script = name_script+"_SQL"
+    name_script = name_script+"_MYSQL"
     
     #Adicionar as aspas simples nas categoricas (strings)
     data = df.copy()
@@ -27,7 +21,7 @@ def converter_df_in_sql(df, tb_name, name_script):
             data[c] = "'"+data[c]+"'"    
     
     #Adiciona a primeira linha com nome da tabela
-    txt1 = f"INSERT INTO [dbo].[{tb_name}]"
+    txt1 = f"INSERT INTO `{db_name}`.`{tb_name}`"
     with open(f"SCRIPTS/{name_script}.sql","a",encoding="utf-8") as arquivo:
         arquivo.writelines(txt1+"\n")
     
@@ -35,17 +29,17 @@ def converter_df_in_sql(df, tb_name, name_script):
     cols = data.columns.tolist()
     for c in range(data.shape[1]):
         if c == 0:
-            s = f"\t\t\t([{cols[c]}]"
+            s = f"(`{cols[c]}`,"
         elif c == data.shape[1]-1:
-            s = f"\t\t\t,[{cols[c]}])"
+            s = f"`{cols[c]}`)"
         else:
-            s = f"\t\t\t,[{cols[c]}]"
+            s = f"`{cols[c]}`,"
 
         with open(f"SCRIPTS/{name_script}.sql","a",encoding="utf-8") as arquivo:
                 arquivo.writelines(s+"\n")
 
     with open(f"SCRIPTS/{name_script}.sql","a",encoding="utf-8") as arquivo:
-        arquivo.writelines("\tVALUES"+"\n")
+        arquivo.writelines("VALUES"+"\n")
     
     # Adiciona linhas com os valores (registros a serem inseridos)
     for i in range(data.shape[0]):
@@ -55,9 +49,9 @@ def converter_df_in_sql(df, tb_name, name_script):
         s = str(s).replace("\"","")
 
         if i == data.shape[0]-1:
-            s = s
+            s = s+";"
         else:
             s = s+","
 
         with open(f"SCRIPTS/{name_script}.sql","a",encoding="utf-8") as arquivo:
-            arquivo.writelines("\t\t\t"+s+"\n")
+            arquivo.writelines(s+"\n")

@@ -1,1 +1,5 @@
-from df_to_sqlserver.df_to_sqlserver import converter_df_in_sql
+import df_to_sqlserver
+import df_to_mysql
+import df_to_postgresql
+import df_to_oracle
+import df_to_sqlite
